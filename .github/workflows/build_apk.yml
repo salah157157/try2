@@ -23,12 +23,14 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+        working-directory: ./try2
 
       - name: Build APK Release
         run: flutter build apk --release
+        working-directory: ./try2
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: './try2/build/app/outputs/flutter-apk/app-release.apk'
