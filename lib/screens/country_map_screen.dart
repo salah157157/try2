@@ -193,7 +193,11 @@ class CountryMapScreen extends StatelessWidget {
         child: FlutterMap(
           options: MapOptions(initialCenter: coord, initialZoom: 13.0),
           children: [
-            TileLayer(urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'),
+           TileLayer(
+  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  // أضف هذا السطر إجبارياً لكي يتطابق مع معرف تطبيقك على الأندرويد:
+  userAgentPackageName: 'com.rahhal.app',
+),
             MarkerLayer(
               markers: [
                 Marker(
